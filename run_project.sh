@@ -13,14 +13,14 @@ if [ -z $project ]; then
     exit 1;
 fi
 
-cd $project && sudo docker run --rm  --user "$(id -u)":"$(id -g)" -v "$PWD":/usr/src/$project -w /usr/src/$project rust:$rustver cargo run
+cd projects/$project && sudo docker run --rm  --user "$(id -u)":"$(id -g)" -v "$PWD":/usr/src/$project -w /usr/src/$project rust:$rustver cargo run
 if [ $? -ne 0 ]; then
     echo "Fail to run the project '"$project"'.";
     cd ..
     exit 1;
 fi
 
-cd ..
+cd ../../
 
 echo "The project '"$project"' was executed correctly.";
 exit 0;
