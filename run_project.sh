@@ -22,5 +22,6 @@ fi
 
 cd ../../
 
+echo "^^^^^^^^^^";
 echo "The project '"$project"' was executed correctly.";
 exit 0;
